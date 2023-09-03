@@ -5,7 +5,9 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 ## Autores
 
 - [@ViniciusCN9](https://github.com/ViniciusCN9)
-- Adicionar github
+- [@Guilherme-Zamboni](https://github.com/Guilherme-Zamboni)
+- [@rafarbarros](https://github.com/rafarbarros)
+- [@DS-Matheus](https://github.com/DS-Matheus)
 
 
 ## Roadmap
