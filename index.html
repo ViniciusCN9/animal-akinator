@@ -10,7 +10,7 @@
 <body>
     <div id="ctn-initial" class="container d-flex flex-column h-75 w-75 justify-content-around align-items-center">
         <div class="bg-image w-100 h-75" style="background-image: url(/images/animal-akinator-logo.png); background-repeat: no-repeat; background-size: contain; background-position: center;"></div>
-        <button type="button" class="btn-play brd-default-border" onclick="playGame()">
+        <button type="button" class="btn-play" onclick="playGame()">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#7A1F25" class="bi bi-play" viewBox="0 0 16 16">
                 <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
             </svg>
@@ -18,8 +18,23 @@
     </div>
     <div id="ctn-game" class="container d-none flex-row h-100 w-75 justify-content-around align-items-center">
         <div id="img-akinator" class="bg-image w-50 h-100" style="background-image: url(/images/akinator-01.webp); background-repeat: no-repeat; background-size: 120%; background-position: left;"></div>
-        <div class="container d-flex flex-column h-50 w-50 bg-light">
-
+        <div id="ctn-dialog" class="d-flex flex-column h-50 w-50 justify-content-around align-items-start m-0 p-0 rounded-3 bg-dark-subtle">
+            <button id="btn-close-game" class="align-self-end translate-middle" onclick="closeGame()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#DC3545" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+            </button>
+            <div id="ctn-bubble-akinator" class="ctn-bubble ctn-bubble-left m-4">Esse animal é um mamífero?</div>
+            <div id="ctn-bubble-continue" class="ctn-bubble ctn-bubble-right align-self-end m-4">
+                <button type="button" class="btn btn-outline-primary" onclick="showChoice()">Continuar</button>
+            </div>
+            <div id="ctn-bubble-user" class="ctn-bubble ctn-bubble-right align-self-end d-flex gap-3 m-4 d-none">
+                <button type="button" class="btn btn-outline-success" onclick="handle(true)">Sim</button>
+                <button type="button" class="btn btn-outline-danger" onclick="handle(false)">Não</button>
+            </div>
+            <div id="ctn-bubble-exit" class="ctn-bubble ctn-bubble-right align-self-end m-4 d-none">
+                <button type="button" class="btn btn-outline-primary" onclick="closeGame()">Sair</button>
+            </div>
         </div>
     </div>
     <button id="btn-music-on" class="position-absolute bottom-0 end-0 m-3" onclick="setMusicOff()">
@@ -38,7 +53,7 @@
         <source src="/songs/arabic-song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

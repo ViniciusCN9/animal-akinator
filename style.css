@@ -24,12 +24,6 @@ body {
   background-size: contain;
 }
 
-/* COMPARTILHADO */
-.brd-default-border {
-  border: solid 3px #7A1F25;
-  border-radius: 16px;
-}
-
 /* BOTÕES DE MÚSICA */
 #btn-music-on,
 #btn-music-off {
@@ -48,6 +42,8 @@ body {
   margin: 0;
   height: 15%;
   width: 530px;
+  border: solid 3px #7A1F25;
+  border-radius: 16px;
 }
 
 .btn-play:main,
@@ -56,6 +52,47 @@ body {
 }
 
 .btn-play:hover {
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
+}
+
+/* BALÃO DE FALA */
+.ctn-bubble {
+  font-size: 1.1em;
+  background: #fff;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.ctn-bubble::after {
+  content: "";
+  border: 10px solid transparent;
+  position: absolute;
+}
+
+.ctn-bubble-left::after {
+  border-right-color: #fff;
+  border-left: 0;
+  left: -10px;
+  top: 75%;
+  margin-top: -20px;
+}
+
+.ctn-bubble-right::after {
+  border-left-color: #fff;
+  border-right: 0;
+  right: -10px;
+  top: 75%;
+  margin-top: -20px;
+}
+
+/* BOTÃO DE FECHAR JOGO */
+#btn-close-game {
+  background: none;
+}
+
+#btn-close-game>svg :hover {
   filter: brightness(1.2);
   -webkit-filter: brightness(1.2);
 }
