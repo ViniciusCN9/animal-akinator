@@ -71,31 +71,6 @@ const AKINATOR_IMAGE_03 = "./images/akinator-03.webp"
 const AKINATOR_IMAGE_04 = "./images/akinator-04.webp"
 const AKINATOR_IMAGE_05 = "./images/akinator-05.webp"
 
-const QUESTION_BASE = "Esse animal"
-
-const QUESTION_IS_MAMMAL = `${QUESTION_BASE} é um mamífero?`
-const QUESTION_IS_BIRD = `${QUESTION_BASE} é uma ave?`
-const QUESTION_IS_REPTILE = `${QUESTION_BASE} é um réptil?`
-
-const QUESTION_IS_QUADRUPED = `${QUESTION_BASE} é quádrupede?`
-const QUESTION_IS_BIPED = `${QUESTION_BASE} é bípede?`
-const QUESTION_IS_FLYING = `${QUESTION_BASE} voa?`
-const QUESTION_IS_AQUATIC = `${QUESTION_BASE} é aquático?`
-const QUESTION_IS_NON_FLYING = `${QUESTION_BASE} não voa?`
-const QUESTION_IS_SWIMMING = `${QUESTION_BASE} nada?`
-const QUESTION_IS_PREY = `${QUESTION_BASE} é de rapina?`
-const QUESTION_IS_HOOFED = `${QUESTION_BASE} tem cascos?`
-const QUESTION_IS_FEET = `${QUESTION_BASE} tem patas?`
-const QUESTION_IS_LEGLESS = `${QUESTION_BASE} não ter pernas?`
-
-const QUESTION_IS_CARNIVORE = `${QUESTION_BASE} é carnívoro?`
-const QUESTION_IS_HERBIVORE = `${QUESTION_BASE} é herbívoro?`
-const QUESTION_IS_OMNIVORE = `${QUESTION_BASE} é onívoro?`
-const QUESTION_IS_FRUCTIVORE = `${QUESTION_BASE} é frutívoro?`
-
-const QUESTION_IS_POLAR = `${QUESTION_BASE} é polar?`
-const QUESTION_IS_TROPICAL = `${QUESTION_BASE} é tropical?`
-
 const QUESTION_STATE = {
     isType: "isType",
     isLocomotion: "isLocomotion",
