@@ -80,22 +80,6 @@ const QUESTION_STATE = {
 const EXPLAIN_MESSAGE = "Escolha um animal e responda as perguntas!"
 const SUCCESS_MESSAGE = "E o animal é: "
 const ERROR_MESSAGE = "Não foi possível identificar o animal!"
-const NONE = "none"
-
-const NAME = {
-    lion: "lion",
-    horse: "horse",
-    human: "human",
-    monkey: "monkey",
-    bat: "bat",
-    whale: "whale",
-    ostrich: "ostrich",
-    penguin: "penguin",
-    turtle: "turtle",
-    crocodile: "crocodile",
-    snake: "snake",
-    none: ""
-}
 
 /* VARIÁVEIS GLOBAIS */
 var animals
