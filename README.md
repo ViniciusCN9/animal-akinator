@@ -12,7 +12,7 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 
 ## Roadmap
 
-- ~~ Definir como será busca do animal correto, seja retornando diretamente ou montando um filtro e buscando no arquivo JSON ~~
+- ~~Definir como será busca do animal correto, seja retornando diretamente ou montando um filtro e buscando no arquivo JSON~~
 
 - Definir interface visual do elemento onde estão os balões de fala
 
