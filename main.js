@@ -9,6 +9,59 @@ const MUSIC_AUDIO = document.getElementById("aud-music")
 const MUSIC_BUTTON_ON = document.getElementById("btn-music-on")
 const MUSIC_BUTTON_OFF = document.getElementById("btn-music-off")
 
+/* ENTIDADES */
+class Animal {
+    constructor(name, translatedName, type, info, image) {
+        this.name = name
+        this.translatedName = translatedName
+        this.type = type
+        this.info = info
+        this.image = image
+    }
+
+    reset() {
+        this.name = null
+        this.translatedName = null
+        this.type = null
+        this.info = null
+        this.image = null
+    }
+}
+
+class Type {
+    constructor(id, name, question, locomotion) {
+        this.id = id
+        this.name = name
+        this.question = question
+        this.locomotion = locomotion
+    }
+}
+
+class Locomotion {
+    constructor(id, name, question, additional) {
+        this.id = id
+        this.name = name
+        this.question = question
+        this.additional = additional
+    }
+}
+
+class Additional {
+    constructor(id, name, question) {
+        this.id = id
+        this.name = name
+        this.question = question
+    }
+}
+
+class Filter {
+    constructor(type, locomotion, additional) {
+        this.type = type
+        this.locomotion = locomotion
+        this.additional = additional
+    }
+}
+
 /* CONSTANTES */
 const DISPLAY_NONE_CLASS = "d-none"
 const DISPLAY_FLEX_CLASS = "d-flex"
@@ -17,35 +70,68 @@ const AKINATOR_IMAGE_02 = "./images/akinator-02.webp"
 const AKINATOR_IMAGE_03 = "./images/akinator-03.webp"
 const AKINATOR_IMAGE_04 = "./images/akinator-04.webp"
 const AKINATOR_IMAGE_05 = "./images/akinator-05.webp"
-const QUESTION_IS_MAMMAL = "Esse animal é um mamífero?"
-const QUESTION_IS_BIRD = "Esse animal é uma ave?"
-const QUESTION_IS_REPTILE = "Esse animal é um réptil?"
+
+const QUESTION_BASE = "Esse animal"
+
+const QUESTION_IS_MAMMAL = `${QUESTION_BASE} é um mamífero?`
+const QUESTION_IS_BIRD = `${QUESTION_BASE} é uma ave?`
+const QUESTION_IS_REPTILE = `${QUESTION_BASE} é um réptil?`
+
+const QUESTION_IS_QUADRUPED = `${QUESTION_BASE} é quádrupede?`
+const QUESTION_IS_BIPED = `${QUESTION_BASE} é bípede?`
+const QUESTION_IS_FLYING = `${QUESTION_BASE} voa?`
+const QUESTION_IS_AQUATIC = `${QUESTION_BASE} é aquático?`
+const QUESTION_IS_NON_FLYING = `${QUESTION_BASE} não voa?`
+const QUESTION_IS_SWIMMING = `${QUESTION_BASE} nada?`
+const QUESTION_IS_PREY = `${QUESTION_BASE} é de rapina?`
+const QUESTION_IS_HOOFED = `${QUESTION_BASE} tem cascos?`
+const QUESTION_IS_FEET = `${QUESTION_BASE} tem patas?`
+const QUESTION_IS_LEGLESS = `${QUESTION_BASE} não ter pernas?`
+
+const QUESTION_IS_CARNIVORE = `${QUESTION_BASE} é carnívoro?`
+const QUESTION_IS_HERBIVORE = `${QUESTION_BASE} é herbívoro?`
+const QUESTION_IS_OMNIVORE = `${QUESTION_BASE} é onívoro?`
+const QUESTION_IS_FRUCTIVORE = `${QUESTION_BASE} é frutívoro?`
+
+const QUESTION_IS_POLAR = `${QUESTION_BASE} é polar?`
+const QUESTION_IS_TROPICAL = `${QUESTION_BASE} é tropical?`
+
+const QUESTION_STATE = {
+    isType: "isType",
+    isLocomotion: "isLocomotion",
+    isAdditonal: "isAdditional"
+}
+
 const EXPLAIN_MESSAGE = "Escolha um animal e responda as perguntas!"
 const SUCCESS_MESSAGE = "E o animal é: "
 const ERROR_MESSAGE = "Não foi possível identificar o animal!"
+const NONE = "none"
 
-/* ENTIDADE */
-class Animal {
-    constructor(name, type, locomotion, habitat, food) {
-        this.name = name
-        this.type = type
-        this.locomotion = locomotion
-        this.habitat = habitat
-        this.food = food
-    }
-
-    reset() {
-        this.name = null
-        this.type = null
-        this.locomotion = null
-        this.habitat = null
-        this.food = null
-    }
+const NAME = {
+    lion: "lion",
+    horse: "horse",
+    human: "human",
+    monkey: "monkey",
+    bat: "bat",
+    whale: "whale",
+    ostrich: "ostrich",
+    penguin: "penguin",
+    turtle: "turtle",
+    crocodile: "crocodile",
+    snake: "snake",
+    none: ""
 }
 
 /* VARIÁVEIS GLOBAIS */
-var animal = new Animal(null, null, null, null, null)
-var exclusions = []
+var animals
+var animal
+var filter
+var types
+var actualType
+var locomotions
+var actualLocomotion
+var additionals
+var actualAdditional
 
 /* CONTROLES DE MÚSICA */
 function setMusicOff() {
@@ -62,12 +148,12 @@ function setMusicOn() {
 
 /* CONTROLES DO JOGO */
 function playGame() {
+    resetGame()
     if (CONTAINER_INITIAL.classList.contains(DISPLAY_FLEX_CLASS) && CONTAINER_GAME.classList.contains(DISPLAY_NONE_CLASS)) {
         CONTAINER_INITIAL.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
         CONTAINER_GAME.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
     }
     showContinue()
-    reset()
 }
 
 function closeGame() {
@@ -75,33 +161,10 @@ function closeGame() {
         CONTAINER_GAME.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
         CONTAINER_INITIAL.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
     }
-    reset()
+    resetGame()
 }
 
 /* EXIBIÇÕES */
-function showContinue() {
-    CONTAINER_BUBBLE_AKINATOR.innerHTML = EXPLAIN_MESSAGE
-
-    if (CONTAINER_BUBBLE_CONTINUE.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_EXIT.classList.contains(DISPLAY_NONE_CLASS)) {
-        CONTAINER_BUBBLE_CONTINUE.classList.remove(DISPLAY_NONE_CLASS)
-        CONTAINER_BUBBLE_EXIT.classList.add(DISPLAY_NONE_CLASS)
-    }
-}
-
-function showChoice() {
-    CONTAINER_BUBBLE_AKINATOR.innerHTML = QUESTION_IS_MAMMAL
-
-    if (CONTAINER_BUBBLE_USER.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_EXIT.classList.contains(DISPLAY_NONE_CLASS)) {
-        CONTAINER_BUBBLE_USER.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
-        CONTAINER_BUBBLE_EXIT.classList.add(DISPLAY_NONE_CLASS)
-    }
-
-    if (CONTAINER_BUBBLE_USER.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_CONTINUE.classList.contains(DISPLAY_NONE_CLASS)) {
-        CONTAINER_BUBBLE_USER.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
-        CONTAINER_BUBBLE_CONTINUE.classList.add(DISPLAY_NONE_CLASS)
-    }
-}
-
 function showExit() {
     if (CONTAINER_BUBBLE_USER.classList.contains(DISPLAY_FLEX_CLASS) && CONTAINER_BUBBLE_EXIT.classList.contains(DISPLAY_NONE_CLASS)) {
         CONTAINER_BUBBLE_USER.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
@@ -115,141 +178,200 @@ function showError() {
 }
 
 function showSuccess() {
-    CONTAINER_BUBBLE_AKINATOR.innerHTML = SUCCESS_MESSAGE + animal.type // Aqui será o animal.name
+    CONTAINER_BUBBLE_AKINATOR.innerHTML = SUCCESS_MESSAGE + animal.translatedName
     showExit()
 }
 
-/* MANIPULAÇÃO */
-function handle(isTrue) {
-    if (animal.type == null) {
-        if (!exclusions.includes("mammal")) {
-            let type = isTrue ? "mammal" : null
-            console.log(type)
-            if (type == null) {
-                CONTAINER_BUBBLE_AKINATOR.innerHTML = QUESTION_IS_BIRD
-                exclusions.push("mammal")
-                return
-            }
-            animal.type = type
-            showSuccess() // Não será exibido aqui
-            return
-        }
-        if (!exclusions.includes("bird")) {
-            let type = isTrue ? "bird" : null
-            console.log(type)
-            if (type == null) {
-                CONTAINER_BUBBLE_AKINATOR.innerHTML = QUESTION_IS_REPTILE
-                exclusions.push("bird")
-                return
-            }
-            animal.type = type
-            showSuccess() // Não será exibido aqui
-            return
-        }
-        if (!exclusions.includes("reptile")) {
-            let type = isTrue ? "reptile" : null
-            console.log(type)
-            if (type == null) {
+function showContinue() {
+    CONTAINER_BUBBLE_AKINATOR.innerHTML = EXPLAIN_MESSAGE
+
+    if (CONTAINER_BUBBLE_CONTINUE.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_EXIT.classList.contains(DISPLAY_NONE_CLASS)) {
+        CONTAINER_BUBBLE_CONTINUE.classList.remove(DISPLAY_NONE_CLASS)
+        CONTAINER_BUBBLE_EXIT.classList.add(DISPLAY_NONE_CLASS)
+    }
+}
+
+function showQuestion(question) {
+    CONTAINER_BUBBLE_AKINATOR.innerHTML = question
+}
+
+function showChoice() {
+    if (CONTAINER_BUBBLE_USER.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_EXIT.classList.contains(DISPLAY_NONE_CLASS)) {
+        CONTAINER_BUBBLE_USER.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
+        CONTAINER_BUBBLE_EXIT.classList.add(DISPLAY_NONE_CLASS)
+    }
+
+    if (CONTAINER_BUBBLE_USER.classList.contains(DISPLAY_NONE_CLASS) && !CONTAINER_BUBBLE_CONTINUE.classList.contains(DISPLAY_NONE_CLASS)) {
+        CONTAINER_BUBBLE_USER.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
+        CONTAINER_BUBBLE_CONTINUE.classList.add(DISPLAY_NONE_CLASS)
+    }
+
+    handleQuestion(QUESTION_STATE.isType)
+}
+
+/* MANIPULAÇÕES */
+function handleQuestion(questionState) {
+    switch (questionState) {
+        case QUESTION_STATE.isType: {
+            if (Array.isArray(types) && types.length) {
+                actualType = types[0]
+                showQuestion(actualType.question)
+                types.shift()
+            } else {
                 showError()
-                return
             }
-            animal.type = type
-            showSuccess() // Não será exibido aqui
+            break
+        }
+        case QUESTION_STATE.isLocomotion: {
+            if (Array.isArray(locomotions) && locomotions.length) {
+                actualLocomotion = locomotions[0]
+                showQuestion(actualLocomotion.question)
+                locomotions.shift()
+            } else {
+                showError()
+            }
+            break
+        }
+        case QUESTION_STATE.isAdditonal: {
+            if (Array.isArray(additionals) && additionals.length) {
+                actualAdditional = additionals[0]
+                showQuestion(actualAdditional.question)
+                additionals.shift()
+            } else {
+                showError()
+            }
+            break
+        }
+        default:
+            showError()
+    }
+}
+
+function handleChoice(isTrue) {
+    if (filter.type == null) {
+        if (isTrue) {
+            filter.type = actualType
+            locomotions = filter.type.locomotion
+            handleQuestion(QUESTION_STATE.isLocomotion)
+            return
+        } else {
+            handleQuestion(QUESTION_STATE.isType)
             return
         }
     }
-    // TODO: Terminar implementação para os demais tipos
+
+    if (filter.locomotion == null) {
+        if (isTrue) {
+            filter.locomotion = actualLocomotion
+            additionals = filter.locomotion.additional
+            additionals.length ? handleQuestion(QUESTION_STATE.isAdditonal) : filter.additional = new Additional(0, "", "")
+        } else {
+            handleQuestion(QUESTION_STATE.isLocomotion)
+            return
+        }
+    }
+
+    if (filter.additional == null) {
+        if (isTrue) {
+            filter.additional = actualAdditional
+        } else {
+            handleQuestion(QUESTION_STATE.isAdditonal)
+            return
+        }
+    }
+
+    findAnimal()
 }
 
-/* UTILITADES */
-function reset() {
+/* UTILIDADES */
+function resetGame() {
+    animal = null
+    filter = new Filter(null, null, null)
+    actualAdditional = null
+    actualLocomotion = null
+    actualType = null
 
-    exclusions = []
-    animal.reset()
+    loadAdditionals()
+    loadLocomotions()
+    loadTypes()
+    loadAnimals()
 }
 
-// let input = "input";
+function findAnimal() {
+    animal = animals.find((object) =>
+        object.type.name === filter.type.name &&
+        object.type.locomotion.name === filter.locomotion.name &&
+        object.type.locomotion.additional.name === filter.additional.name)
+    showSuccess()
+}
 
-// print("Esse animal é um mamífero? ");
-// input = "get input";
+function loadAnimals() {
+    animals = []
+    readJSON("./database/animals.json").then((response) => {
+        response.forEach((item) => {
+            animals.push(
+                new Animal(
+                    item.name,
+                    item.translatedName,
+                    new Type(
+                        item.type.id,
+                        item.type.name,
+                        item.type.question,
+                        new Locomotion(
+                            item.type.locomotion.id,
+                            item.type.locomotion.name,
+                            item.type.locomotion.question,
+                            new Additional(
+                                item.type.locomotion.additional.id,
+                                item.type.locomotion.additional.name,
+                                item.type.locomotion.additional.question
+                            )
+                        )
+                    ),
+                    item.info,
+                    item.image
+                )
+            )
+        })
+    })
+}
 
-// if (input == sim) {
-//     print("Esse animal é um quadrúpede? ");
-//     input = "get input";
+function loadAdditionals() {
+    additionals = []
+    readJSON("./database/additionals.json").then((response) => {
+        response.forEach(item => {
+            additionals.push(
+                new Additional(item.id, item.name, item.question)
+            )
+        })
+    })
+}
 
-//     if (input == sim) {
-//         print("Esse animal é carnívoro? ");
-//         input = "get input";
+function loadLocomotions() {
+    locomotions = []
+    readJSON("./database/locomotions.json").then((response) => {
+        response.forEach(item => {
+            let additional = additionals.filter((e) => item.additional.includes(e.id))
+            locomotions.push(
+                new Locomotion(item.id, item.name, item.question, additional)
+            )
+        })
+    })
+}
 
-//         if (input == sim) {
-//             print("Esse animal é um leão");
-//             break;
-//         }
+function loadTypes() {
+    types = []
+    readJSON("./database/types.json").then((response) => {
+        response.forEach(item => {
+            let locomotion = locomotions.filter((e) => item.locomotion.includes(e.id))
+            types.push(
+                new Type(item.id, item.name, item.question, locomotion)
+            )
+        })
+    })
+}
 
-//         else {
-//             print("Esse animal é um cavalo");
-//             break;
-//         }
-//     }
-
-//     else {
-//         print("Esse animal é um bípede? ");
-//         input = "get input";
-
-//         if (input == sim) {
-//             print("Esse animal é onívoro? ");
-//             input = "get input";
-
-//             if (input == sim) {
-//                 print("Esse animal é um homem");
-//                 break;
-//             }
-
-//             else {
-//                 print("Esse animal é um macaco");
-//                 break;
-//             }
-//         }
-
-//         else {
-//             print("Esse animal é voador? ");
-//             input = "get input";
-
-//             if (input == sim) {
-//                 print("Esse animal é um morcego");
-//                 break;
-//             }
-
-//             else {
-//                 print("Esse animal é uma baleia");
-//                 break;
-//             }
-//         }
-//     }
-// }
-
-// else {
-//     print("Esse animal é uma ave?");
-//     input = "get input";
-
-
-
-
-// }
-// if (input = sim) {
-//     print("Esse animal é do tipo Não-voador?")
-//     input = "get input";
-
-//     if (input = sim) {
-//         print("Esse animal é do tipo Tropical?")
-//         input = "get input";
-
-//         if (input = sim) {
-//             print("Esse animal é um Avestruz?")
-//             input = "get input";
-
-//             else
-//             print("Esse animal é do tipo polar, e é um Pinguim");
-//         }
-
-
+async function readJSON(path) {
+    const object = await fetch(path)
+    return await object.json()
+}

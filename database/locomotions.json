@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "name": "quadruped",
+        "question": "Esse animal é quádrupede?",
+        "additional": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "name": "biped",
+        "question": "Esse animal é bípede?",
+        "additional": [
+            3,
+            4
+        ]
+    },
+    {
+        "id": 3,
+        "name": "flying",
+        "question": "Esse animal é voador?",
+        "additional": []
+    },
+    {
+        "id": 4,
+        "name": "aquatic",
+        "question": "Esse animal é aquático?",
+        "additional": []
+    },
+    {
+        "id": 5,
+        "name": "non-flying",
+        "question": "Esse animal é não voador?",
+        "additional": [
+            5,
+            6
+        ]
+    },
+    {
+        "id": 6,
+        "name": "swimming",
+        "question": "Esse animal é nadador?",
+        "additional": []
+    },
+    {
+        "id": 7,
+        "name": "prey",
+        "question": "Esse animal é de rapina?",
+        "additional": []
+    },
+    {
+        "id": 8,
+        "name": "hoofed",
+        "question": "Esse animal tem cascos?",
+        "additional": []
+    },
+    {
+        "id": 9,
+        "name": "feet",
+        "question": "Esse animal tem patas?",
+        "additional": [
+            1
+        ]
+    },
+    {
+        "id": 10,
+        "name": "legless",
+        "question": "Esse animal não tem pernas?",
+        "additional": []
+    }
+]

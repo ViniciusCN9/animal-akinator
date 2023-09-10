@@ -1,0 +1,275 @@
+[
+    {
+        "name": "lion",
+        "translatedName": "leão",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 1,
+                "name": "quadruped",
+                "question": "Esse animal é quádrupede?",
+                "additional": {
+                    "id": 1,
+                    "name": "carnivores",
+                    "question": "Esse animal é carnívoro?"
+                }
+            }
+        },
+        "info": "O leão é uma espécie de mamífero carnívoro do gênero Panthera e da família Felidae. A espécie é atualmente encontrada na África subsaariana e na Ásia, com uma única população remanescente em perigo, no Parque Nacional da Floresta de Gir, Gujarat, Índia. Foi extinto na África do Norte e no Sudoeste Asiático em tempos históricos, e até o Pleistoceno Superior, há cerca de 10 000 anos, era o mais difundido grande mamífero terrestre depois dos humanos, sendo encontrado na maior parte da África, em muito da Eurásia, da Europa Ocidental à Índia, e na América, do Yukon ao México. É uma dos quatro grandes felinos, com alguns machos excedendo 250 quilogramas em peso, sendo o segundo maior felino recente depois do tigre.",
+        "image": "./images/animals/lion.jpg"
+    },
+    {
+        "name": "horse",
+        "translatedName": "cavalo",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 1,
+                "name": "quadruped",
+                "question": "Esse animal é quádrupede?",
+                "additional": {
+                    "id": 2,
+                    "name": "herbivores",
+                    "question": "Esse animal é herbívoro?"
+                }
+            }
+        },
+        "info": "O cavalo é uma das duas subespécies existentes de Equus ferus. É um mamífero perissodáctilo pertencente à família taxonômica Equidae. O cavalo evoluiu há entre 45 milhões a 55 milhões de anos, desde uma pequena criatura com vários dedos, o Eohippus, até o animal grande e com um único dedo de hoje. Os seres humanos começaram a domesticar cavalos por volta de 4000 a.C. e acredita-se que sua domesticação tenha sido disseminada em 3000 a.C. Os cavalos da subespécie caballus são domesticados, embora algumas populações domesticadas vivam na natureza como cavalos selvagens. Essas populações selvagens não são verdadeiros cavalos 'selvagens', pois esse termo é usado para descrever cavalos que nunca foram domesticados, como o cavalo de Przewalski, uma espécie em perigo de extinção, uma subespécie separada e o único verdadeiro cavalo selvagem restante na natureza. Existe um vocabulário extenso e especializado usado para descrever conceitos relacionados a equinos, cobrindo de tudo, desde anatomia a estágios da vida, tamanho, cores, marcações, raças, locomoção e comportamento.",
+        "image": "./images/animals/horse.jpg"
+    },
+    {
+        "name": "human",
+        "translatedName": "humano",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 2,
+                "name": "biped",
+                "question": "Esse animal é bípede?",
+                "additional": {
+                    "id": 3,
+                    "name": "omnivores",
+                    "question": "Esse animal é onívoro?"
+                }
+            }
+        },
+        "info": "Humano é a única espécie do gênero Homo ainda viva e o primata mais abundante e difundido da Terra, caracterizado pelo bipedalismo e por cérebros grandes, o que permitiu o desenvolvimento de ferramentas, culturas e linguagens avançadas. Os humanos tendem a viver em estruturas sociais complexas compostas por muitos grupos cooperantes e concorrentes, desde famílias e redes de parentesco até Estados políticos. As interações sociais entre os humanos estabeleceram uma ampla variedade de valores, normas e rituais, que fortalecem a sociedade humana. A curiosidade e o desejo humano de compreender e influenciar o meio ambiente e de explicar e manipular fenômenos motivaram o desenvolvimento da ciência, filosofia, mitologia, religião e outros campos de estudo da humanidade.",
+        "image": "./images/animals/human.jpg"
+    },
+    {
+        "name": "monkey",
+        "translatedName": "macaco",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 2,
+                "name": "biped",
+                "question": "Esse animal é bípede?",
+                "additional": {
+                    "id": 4,
+                    "name": "fructivores",
+                    "question": "Esse animal é frutívoro?"
+                }
+            }
+        },
+        "info": "Macaco é um termo de origem africana utilizado como designação comum a todas as espécies de símios ou primatas antropoides. É aplicada restritivamente no Brasil aos cebídeos (ou macacos do Novo Mundo) em geral. No sentido estrito, 'macaco' refere-se às espécies de primatas pertencentes ao género Macaca.",
+        "image": "./images/animals/monkey.jpg"
+    },
+    {
+        "name": "bat",
+        "translatedName": "morcego",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 3,
+                "name": "flying",
+                "question": "Esse animal é voador?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "O morcego é um animal mamífero da ordem Chiroptera, cujos integrantes apresentam uma fina membrana de pele entre os dedos, a qual se estende até as patas e se conecta às laterais do corpo, formando as asas. Distinguem-se das aves, pois estas possuem penas suportadas por ossos. Os morcegos são os únicos mamíferos com voo verdadeiro. No Brasil, o morcego pode ser raramente chamado pelos seus nomes indígenas andirá ou guandira.",
+        "image": "./images/animals/bat.jpg"
+    },
+    {
+        "name": "whale",
+        "translatedName": "baleia",
+        "type": {
+            "id": 1,
+            "name": "mammal",
+            "question": "Esse animal é um mamífero?",
+            "locomotion": {
+                "id": 4,
+                "name": "aquatic",
+                "question": "Esse animal é aquático?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "Os Misticetos ou baleias-de-barbatana são um grupo monofilético que pertence à ordem Cetacea, a qual compreende animais terrestres que, ao longo da evolução, retornaram ao ambiente aquático, tendo esse retorno sido marcado pela mudança gradual da posição das narinas. Nos primeiros cetáceos, as narinas estavam localizadas próximas à extremidade do focinho e, à medida que esses animais foram se adaptando cada vez ao ambiente aquático, a seleção natural favoreceu os organismos com ossos nasais mais retraídos e aberturas nasais mais próximas ao topo do crânio.",
+        "image": "./images/animals/whale.jpg"
+    },
+    {
+        "name": "ostrich",
+        "translatedName": "avestruz",
+        "type": {
+            "id": 2,
+            "name": "bird",
+            "question": "Esse animal é uma ave?",
+            "locomotion": {
+                "id": 5,
+                "name": "non-flying",
+                "question": "Esse animal é não voador?",
+                "additional": {
+                    "id": 5,
+                    "name": "tropical",
+                    "question": "Esse animal é tropical?"
+                }
+            }
+        },
+        "info": "O avestruz-comum é uma espécie de ave voadora, originária da Madagascar. É uma das duas únicas espécies vivas da família Struthionidae, do género Struthio e da ordem das Struthioniformes, juntamente com o avestruz-vivo (Struthio molybdophanes), reconhecido como uma espécie separada em 2014. O avestruz-comum e considerado a maior espécie viva",
+        "image": "./images/animals/ostrich.jpg"
+    },
+    {
+        "name": "penguin",
+        "translatedName": "pinguim",
+        "type": {
+            "id": 2,
+            "name": "bird",
+            "question": "Esse animal é uma ave?",
+            "locomotion": {
+                "id": 5,
+                "name": "non-flying",
+                "question": "Esse animal é não voador?",
+                "additional": {
+                    "id": 6,
+                    "name": "polar",
+                    "question": "Esse animal é polar?"
+                }
+            }
+        },
+        "info": "O pinguim é uma ave da família Spheniscidae, altamente modificadas para a uma vida aquática, sendo suas asas adaptadas para promover impulso através da água. Essas aves estão amplamente distribuídas pelas águas mais frias do hemisfério sul, especialmente na Antártida e ilhas dos mares austrais, chegado à Terra do Fogo, Ilhas Malvinas e África do Sul, entre outros. Apesar da maior diversidade de pinguins encontrar-se na Antártida e regiões polares, há também espécies que habitam nos trópicos como por exemplo o pinguim-das-galápagos (Spheniscus mendiculus), nas Ilhas Galápagos. Considerando o número de indivíduos, a maioria ocorre nas proximidades da Antártida, porém apenas as espécies Pygoscelis adeliae e Aptenodytes forsteri estão restritas a essa região, de forma que a maioria das 18 espécies está distribuída entre 45ºS e 60°S, com grande diversidade ocorrendo na Nova Zelândia e em ilhas ao redor.",
+        "image": "./images/animals/penguin.jpg"
+    },
+    {
+        "name": "duck",
+        "translatedName": "pato",
+        "type": {
+            "id": 2,
+            "name": "bird",
+            "question": "Esse animal é uma ave?",
+            "locomotion": {
+                "id": 6,
+                "name": "swimming",
+                "question": "Esse animal é nadador?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "Pato é o nome comum para numerosas espécies de aves aquáticas pertencentes à família Anatidae. Os patos são menores e de pescoço mais curto que os cisnes e gansos, que são os membros da mesma família. São divididos em muitas subfamílias, sendo principalmente aves aquáticas que podem ser encontradas tanto em ambientes com água doce quando com água salgada.",
+        "image": "./images/animals/duck.jpg"
+    },
+    {
+        "name": "eagle",
+        "translatedName": "águia",
+        "type": {
+            "id": 2,
+            "name": "bird",
+            "question": "Esse animal é uma ave?",
+            "locomotion": {
+                "id": 7,
+                "name": "prey",
+                "question": "Esse animal é de rapina?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "A águia é o nome comum dado algumas aves de rapina da família Accipitridae, geralmente de grande porte, carnívoras, de grande acuidade visual. O nome é atribuído a animais pertencentes a gêneros diversos e não corresponde a nenhum clade taxonômico. Por vezes, dentro de um mesmo gênero ocorrem espécies conhecidas popularmente por gavião ou búteo.",
+        "image": "./images/animals/eagle.jpg"
+    },
+    {
+        "name": "turtle",
+        "translatedName": "tartaruga",
+        "type": {
+            "id": 3,
+            "name": "reptile",
+            "question": "Esse animal é um réptil?",
+            "locomotion": {
+                "id": 8,
+                "name": "hoofed",
+                "question": "Esse animal tem cascos?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "Os Testudines, quelónios ou tartarugas são uma ordem de répteis pertencentes ao clado Testudinata. Existem 14 famílias que somam em torno de 356 espécies, ocorrendo em regiões tropicais e temperadas do globo, sendo algumas delas ameaçadas de extinção. Os termos populares cágado (água doce), jabuti (terrestres) e tartarugas (marinhas) não refletem classificação taxonômica. A ordem dos Testudines estão divididas filogeneticamente em dois grandes grupos: Cryptodira (retração do pescoço anteroposterior) e Pleurodira (retração do pescoço lateral). A posição filogenética dentre os Amniota permanece um enigma, sendo considerados por alguns autores como próximos de lepidossauros (evidenciado por dados morfológicos) ou arcossauros",
+        "image": "./images/animals/turtle.jpg"
+    },
+    {
+        "name": "crocodile",
+        "translatedName": "crocodilo",
+        "type": {
+            "id": 3,
+            "name": "reptile",
+            "question": "Esse animal é um réptil?",
+            "locomotion": {
+                "id": 9,
+                "name": "feet",
+                "question": "Esse animal tem patas?",
+                "additional": {
+                    "id": 1,
+                    "name": "carnivores",
+                    "question": "Esse animal é carnívoro?"
+                }
+            }
+        },
+        "info": "Os crocodilos ou Crocodylidae são uma família de répteis com quatorze espécies. O termo 'crocodilo' também é usado às vezes num sentido mais amplo para se referir à ordem Crocodylia (crocodilianos). Os crocodilos verdadeiros (família Crocodylidae), os gaviais (família Gavialidae) e os caimões, os aligatores e jacarés (família Alligatoridae). Os crocodilos vivem nas Américas, África, Ásia e Austrália. A maioria dos crocodilos vivem nas margens de rios, enquanto os da Austrália e ilhas do Pacífico também frequentam o mar. Os crocodilos não possuem predadores naturais, por se tratar de um animal de topo na cadeia alimentar.",
+        "image": "./images/animals/crocodile.jpg"
+    },
+    {
+        "name": "snake",
+        "translatedName": "cobra",
+        "type": {
+            "id": 3,
+            "name": "reptile",
+            "question": "Esse animal é um réptil?",
+            "locomotion": {
+                "id": 10,
+                "name": "legless",
+                "question": "Esse animal não tem pernas?",
+                "additional": {
+                    "id": 0,
+                    "name": "",
+                    "question": ""
+                }
+            }
+        },
+        "info": "Cobra é uma denominação genérica, utilizada frequentemente na língua portuguesa como sinônimo para serpente, enquanto cobra-(de-)capelo designa serpentes (muito venenosas), da família Elapídeos, que, quando excitadas, dilatam a região cervical em jeito de capelo ou capuz de um monge (nas restantes línguas europeias, cobra designa as cobras-capelo, por truncamento a partir da palavra portuguesa).",
+        "image": "./images/animals/snake.jpg"
+    }
+]

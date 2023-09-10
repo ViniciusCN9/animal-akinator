@@ -12,13 +12,15 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 
 ## Roadmap
 
-- Definir como será busca do animal correto, seja retornando diretamente ou montando um filtro e buscando no arquivo JSON
+- ~~ Definir como será busca do animal correto, seja retornando diretamente ou montando um filtro e buscando no arquivo JSON ~~
 
 - Definir interface visual do elemento onde estão os balões de fala
 
-- Ajustar bug ao fechar jogo onde os balões de fala do usuário não são resetados
+- ~~Ajustar bug ao fechar jogo onde os balões de fala do usuário não são resetados~~
 
-- Desenvolver lógica para restante das propriedades do animal como: locomoção, habitat e alimentação
+- ~~Desenvolver lógica para restante das propriedades do animal como: locomoção, habitat e alimentação~~
 
 - Implementar alternância de imagens conforme a etapa que se encontra o usuário
+
+- Implementar exibição do animal encontrado com sua imagem e informações
 

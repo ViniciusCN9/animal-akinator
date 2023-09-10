@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "carnivores",
+        "question": "Esse animal é carnívoro?"
+    },
+    {
+        "id": 2,
+        "name": "herbivores",
+        "question": "Esse animal é herbívoro?"
+    },
+    {
+        "id": 3,
+        "name": "omnivores",
+        "question": "Esse animal é onívoro?"
+    },
+    {
+        "id": 4,
+        "name": "fructivores",
+        "question": "Esse animal é frutívoro?"
+    },
+    {
+        "id": 5,
+        "name": "tropical",
+        "question": "Esse animal é tropical?"
+    },
+    {
+        "id": 6,
+        "name": "polar",
+        "question": "Esse animal é polar?"
+    }
+]
