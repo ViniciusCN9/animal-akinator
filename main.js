@@ -223,7 +223,11 @@ function handleChoice(isTrue) {
         if (isTrue) {
             filter.locomotion = actualLocomotion
             additionals = filter.locomotion.additional
-            additionals.length ? handleQuestion(QUESTION_STATE.isAdditonal) : filter.additional = new Additional(0, "", "")
+            if (additionals.length) {
+                handleQuestion(QUESTION_STATE.isAdditonal)
+                return
+            }
+            filter.additional = new Additional(0, "", "")
         } else {
             handleQuestion(QUESTION_STATE.isLocomotion)
             return
