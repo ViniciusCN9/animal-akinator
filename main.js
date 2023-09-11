@@ -8,6 +8,7 @@ const CONTAINER_GAME = document.getElementById("ctn-game")
 const MUSIC_AUDIO = document.getElementById("aud-music")
 const MUSIC_BUTTON_ON = document.getElementById("btn-music-on")
 const MUSIC_BUTTON_OFF = document.getElementById("btn-music-off")
+const AKINATOR_IMAGE = document.getElementById("img-akinator")
 
 /* ENTIDADES */
 class Animal {
@@ -65,11 +66,11 @@ class Filter {
 /* CONSTANTES */
 const DISPLAY_NONE_CLASS = "d-none"
 const DISPLAY_FLEX_CLASS = "d-flex"
-const AKINATOR_IMAGE_01 = "./images/akinator-01.webp"
-const AKINATOR_IMAGE_02 = "./images/akinator-02.webp"
-const AKINATOR_IMAGE_03 = "./images/akinator-03.webp"
-const AKINATOR_IMAGE_04 = "./images/akinator-04.webp"
-const AKINATOR_IMAGE_05 = "./images/akinator-05.webp"
+const AKINATOR_IMAGE_01 = "/images/akinator-01.webp"
+const AKINATOR_IMAGE_02 = "/images/akinator-02.webp"
+const AKINATOR_IMAGE_03 = "/images/akinator-03.webp"
+const AKINATOR_IMAGE_04 = "/images/akinator-04.webp"
+const AKINATOR_IMAGE_05 = "/images/akinator-05.webp"
 
 const QUESTION_STATE = {
     isType: "isType",
@@ -137,6 +138,7 @@ function showError() {
 }
 
 function showSuccess() {
+    changeAkinatorImage(AKINATOR_IMAGE_05)
     CONTAINER_BUBBLE_AKINATOR.innerHTML = SUCCESS_MESSAGE + animal.translatedName
     showExit()
 }
@@ -166,6 +168,7 @@ function showChoice() {
     }
 
     handleQuestion(QUESTION_STATE.isType)
+    setRandomAkinatorImage()
 }
 
 /* MANIPULAÇÕES */
@@ -204,9 +207,11 @@ function handleQuestion(questionState) {
         default:
             showError()
     }
-}
+} 
 
 function handleChoice(isTrue) {
+    setRandomAkinatorImage()
+
     if (filter.type == null) {
         if (isTrue) {
             filter.type = actualType
@@ -253,6 +258,8 @@ function resetGame() {
     actualAdditional = null
     actualLocomotion = null
     actualType = null
+
+    changeAkinatorImage(AKINATOR_IMAGE_01)
 
     loadAdditionals()
     loadLocomotions()
@@ -337,4 +344,15 @@ function loadTypes() {
 async function readJSON(path) {
     const object = await fetch(path)
     return await object.json()
+}
+
+function changeAkinatorImage(path) {
+    AKINATOR_IMAGE.style["background-image"] = `url(${path})`
+}
+
+function  setRandomAkinatorImage() {
+    let images = [AKINATOR_IMAGE_01, AKINATOR_IMAGE_02, AKINATOR_IMAGE_03, AKINATOR_IMAGE_04]
+    let random = Math.floor(Math.random() * images.length)
+    let path = images[random]
+    changeAkinatorImage(path)
 }

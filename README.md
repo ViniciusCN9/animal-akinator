@@ -20,7 +20,7 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 
 - ~~Desenvolver lógica para restante das propriedades do animal como: locomoção, habitat e alimentação~~
 
-- Implementar alternância de imagens conforme a etapa que se encontra o usuário
+- ~~Implementar alternância de imagens conforme a etapa que se encontra o usuário~~
 
 - Implementar exibição do animal encontrado com sua imagem e informações
 
