@@ -45,4 +45,6 @@ Os principais mecanismos do jogo são os manipuladores da questão e da opção 
 Paralelamente o manipulador da opção do jogador vai populando um filtro com as respostas fornecidas pelo jogador e quando todas as propriedades do filtro forem preenchidas o manipulador busca na base o animal.
 Caso as possibilidades se esgotem antes de encontrar o animal é exibido uma mensagem de erro. 
 
-gdgfdgdgdhd
+gdgfdgdgdhd 
+dasdassargagragra
+gfasgfa
