@@ -24,5 +24,5 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 
 - Implementar exibição do animal encontrado com sua imagem e informações
 
-- Implementar loading para aguardar carregamento do JSON (Deixar por alguns segundos para demostra a funcionalidade)
+- Implementar loading para aguardar carregamento do JSON (Deixar por alguns segundos para demostrar a funcionalidade)
 
