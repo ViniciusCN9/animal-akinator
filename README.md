@@ -44,5 +44,3 @@ A base é carregada ao iniciar o jogo e não é modificada no seu decorrer.
 Os principais mecanismos do jogo são os manipuladores da questão e da opção do jogador. Assim que o jogo é iniciado são carregadas as listas das propriedades que fornecem insumo para o manipulador da questão, conforme a questão é respondida essas listas vão sendo subtraidas para que o sistema possa saber quais possibilidades já foram testadas.
 Paralelamente o manipulador da opção do jogador vai populando um filtro com as respostas fornecidas pelo jogador e quando todas as propriedades do filtro forem preenchidas o manipulador busca na base o animal.
 Caso as possibilidades se esgotem antes de encontrar o animal é exibido uma mensagem de erro. 
-
-gdgfdgdgdhd
