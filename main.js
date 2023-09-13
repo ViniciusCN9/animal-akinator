@@ -139,7 +139,9 @@ function showError() {
 
 function showSuccess() {
     changeAkinatorImage(AKINATOR_IMAGE_05)
-    CONTAINER_BUBBLE_AKINATOR.innerHTML = '<div id="ctn-bubble-akinator-success" class="d-flex flex-column bg-dark-subtle"><img src="/images/animals/eagle.jpg" alt="A águia é o nome comum dado algumas aves de rapina da família Accipitridae, geralmente de grande porte, carnívoras, de grande acuidade visual. O nome é atribuído a animais pertencentes a gêneros diversos e não corresponde a nenhum clade taxonômico. Por vezes, dentro de um mesmo gênero ocorrem espécies conhecidas popularmente por gavião ou búteo."></div>'
+    console.log(animal)
+    console.log(animals)
+    CONTAINER_BUBBLE_AKINATOR.innerHTML = `<div id="ctn-bubble-akinator-success" class="d-flex flex-column justify-content-center align-items-center"><h3><strong>${animal.translatedName.toUpperCase()}</strong></h3><img src="${animal.image}" title="${animal.info}" width = 400px, height = 300px></div>`
     showExit()
 }
 

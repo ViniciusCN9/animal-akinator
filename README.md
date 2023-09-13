@@ -22,7 +22,7 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 
 - ~~Implementar alternância de imagens conforme a etapa que se encontra o usuário~~
 
-- Implementar exibição do animal encontrado com sua imagem e informações
+- ~~Implementar exibição do animal encontrado com sua imagem e informações~~
 
 - Implementar loading para aguardar carregamento do JSON (Deixar por alguns segundos para demostrar a funcionalidade)
 
