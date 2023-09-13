@@ -66,11 +66,11 @@ class Filter {
 /* CONSTANTES */
 const DISPLAY_NONE_CLASS = "d-none"
 const DISPLAY_FLEX_CLASS = "d-flex"
-const AKINATOR_IMAGE_01 = "https://viniciuscn9.github.io/images/akinator-01.webp"
-const AKINATOR_IMAGE_02 = "https://viniciuscn9.github.io/images/akinator-02.webp"
-const AKINATOR_IMAGE_03 = "https://viniciuscn9.github.io/images/akinator-03.webp"
-const AKINATOR_IMAGE_04 = "https://viniciuscn9.github.io/images/akinator-04.webp"
-const AKINATOR_IMAGE_05 = "https://viniciuscn9.github.io/images/akinator-05.webp"
+const AKINATOR_IMAGE_01 = "https://viniciuscn9.github.io/animal-akinator/docs/assets/akinator-01.webp"
+const AKINATOR_IMAGE_02 = "https://viniciuscn9.github.io/animal-akinator/docs/assets/akinator-02.webp"
+const AKINATOR_IMAGE_03 = "https://viniciuscn9.github.io/animal-akinator/docs/assets/akinator-03.webp"
+const AKINATOR_IMAGE_04 = "https://viniciuscn9.github.io/animal-akinator/docs/assets/akinator-04.webp"
+const AKINATOR_IMAGE_05 = "https://viniciuscn9.github.io/animal-akinator/docs/assets/akinator-05.webp"
 
 const QUESTION_STATE = {
     isType: "isType",
