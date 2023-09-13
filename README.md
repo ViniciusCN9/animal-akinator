@@ -8,6 +8,7 @@ Um clone do [Akinator](https://pt.akinator.com) simplificado
 - [@Guilherme-Zamboni](https://github.com/Guilherme-Zamboni)
 - [@rafarbarros](https://github.com/rafarbarros)
 - [@DS-Matheus](https://github.com/DS-Matheus)
+- [@MauricioVoltolin](https://github.com/MauricioVoltolin)
 
 
 ## Roadmap
