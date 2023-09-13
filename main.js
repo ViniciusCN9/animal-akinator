@@ -66,11 +66,11 @@ class Filter {
 /* CONSTANTES */
 const DISPLAY_NONE_CLASS = "d-none"
 const DISPLAY_FLEX_CLASS = "d-flex"
-const AKINATOR_IMAGE_01 = "/images/akinator-01.webp"
-const AKINATOR_IMAGE_02 = "/images/akinator-02.webp"
-const AKINATOR_IMAGE_03 = "/images/akinator-03.webp"
-const AKINATOR_IMAGE_04 = "/images/akinator-04.webp"
-const AKINATOR_IMAGE_05 = "/images/akinator-05.webp"
+const AKINATOR_IMAGE_01 = "https://viniciuscn9.github.io/images/akinator-01.webp"
+const AKINATOR_IMAGE_02 = "https://viniciuscn9.github.io/images/akinator-02.webp"
+const AKINATOR_IMAGE_03 = "https://viniciuscn9.github.io/images/akinator-03.webp"
+const AKINATOR_IMAGE_04 = "https://viniciuscn9.github.io/images/akinator-04.webp"
+const AKINATOR_IMAGE_05 = "https://viniciuscn9.github.io/images/akinator-05.webp"
 
 const QUESTION_STATE = {
     isType: "isType",
@@ -79,7 +79,6 @@ const QUESTION_STATE = {
 }
 
 const EXPLAIN_MESSAGE = "Escolha um animal e responda as perguntas!"
-const SUCCESS_MESSAGE = "E o animal é: "
 const ERROR_MESSAGE = "Não foi possível identificar o animal!"
 
 /* VARIÁVEIS GLOBAIS */
