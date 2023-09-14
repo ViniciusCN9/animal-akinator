@@ -10,7 +10,7 @@
 <body>
     <div id="ctn-initial" class="container d-flex flex-column h-75 w-75 justify-content-around align-items-center">
         <div class="bg-image w-100 h-75" style="background-image: url(https://viniciuscn9.github.io/animal-akinator/docs/assets/animal-akinator-logo.png); background-repeat: no-repeat; background-size: contain; background-position: center;"></div>
-        <button type="button" class="btn-play" onclick="playGame()">
+        <button type="button" class="btn-play" onclick="showLoading()">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#7A1F25" class="bi bi-play" viewBox="0 0 16 16">
                 <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
             </svg>
@@ -32,6 +32,10 @@
             </div>
         </div>
     </div>
+    <div id="ctn-loading" class="container d-none flex-row h-100 w-75 justify-content-around align-items-center">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
     <button id="btn-music-on" class="position-absolute bottom-0 end-0 m-3" onclick="setMusicOff()">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#F59E18" class="bi bi-volume-up" viewBox="0 0 16 16">
             <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>

@@ -5,6 +5,7 @@ const CONTAINER_BUBBLE_USER = document.getElementById("ctn-bubble-user")
 const CONTAINER_BUBBLE_EXIT = document.getElementById("ctn-bubble-exit")
 const CONTAINER_INITIAL = document.getElementById("ctn-initial")
 const CONTAINER_GAME = document.getElementById("ctn-game")
+const CONTAINER_LOADING = document.getElementById("ctn-loading")
 const MUSIC_AUDIO = document.getElementById("aud-music")
 const MUSIC_BUTTON_ON = document.getElementById("btn-music-on")
 const MUSIC_BUTTON_OFF = document.getElementById("btn-music-off")
@@ -108,8 +109,8 @@ function setMusicOn() {
 /* CONTROLES DO JOGO */
 function playGame() {
     resetGame()
-    if (CONTAINER_INITIAL.classList.contains(DISPLAY_FLEX_CLASS) && CONTAINER_GAME.classList.contains(DISPLAY_NONE_CLASS)) {
-        CONTAINER_INITIAL.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
+    if (CONTAINER_LOADING.classList.contains(DISPLAY_FLEX_CLASS) && CONTAINER_GAME.classList.contains(DISPLAY_NONE_CLASS)) {
+        CONTAINER_LOADING.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
         CONTAINER_GAME.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
     }
     showContinue()
@@ -170,6 +171,17 @@ function showChoice() {
 
     handleQuestion(QUESTION_STATE.isType)
     setRandomAkinatorImage()
+}
+
+async function showLoading() {
+    if (CONTAINER_INITIAL.classList.contains(DISPLAY_FLEX_CLASS) && CONTAINER_LOADING.classList.contains(DISPLAY_NONE_CLASS)) {
+        CONTAINER_INITIAL.classList.replace(DISPLAY_FLEX_CLASS, DISPLAY_NONE_CLASS)
+        CONTAINER_LOADING.classList.replace(DISPLAY_NONE_CLASS, DISPLAY_FLEX_CLASS)
+    }
+
+    await sleep(3000)
+
+    playGame()
 }
 
 /* MANIPULAÇÕES */
@@ -356,4 +368,8 @@ function  setRandomAkinatorImage() {
     let random = Math.floor(Math.random() * images.length)
     let path = images[random]
     changeAkinatorImage(path)
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
